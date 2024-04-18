@@ -17,7 +17,7 @@ ln -s /opt/nodejs/bin/npm /usr/bin/npm
 
 # Get the application source code from the Google Cloud Storage bucket.
 mkdir /fancy-store
-gsutil -m cp -r gs://fancy-store-${GCP_PROJECT_ID}/monolith-to-microservices/microservices/* /fancy-store/
+gsutil -m cp -r gs://fancy-store-io-aicardi-393417/monolith-to-microservices/microservices/* /fancy-store/
 
 # Install app dependencies.
 cd /fancy-store/
