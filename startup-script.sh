@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source .env
 # Install logging monitor. The monitor will automatically pick up logs sent to
 # syslog.
 curl -s "https://storage.googleapis.com/signals-agents/logging/google-fluentd-install.sh" | bash
@@ -17,7 +17,7 @@ ln -s /opt/nodejs/bin/npm /usr/bin/npm
 
 # Get the application source code from the Google Cloud Storage bucket.
 mkdir /fancy-store
-gsutil -m cp -r gs://fancy-store-[DEVSHELL_PROJECT_ID]/monolith-to-microservices/microservices/* /fancy-store/
+gsutil -m cp -r gs://fancy-store-${GCP_PROJECT_ID}/monolith-to-microservices/microservices/* /fancy-store/
 
 # Install app dependencies.
 cd /fancy-store/
